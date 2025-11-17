@@ -5,16 +5,17 @@ on:
 
 jobs:
   ubuntu-echo:
-    runs-on: ubuntu-latest
+    runs-on: sh-aw
     steps:
       - name: Show OS
         shell: bash
         run: |
           echo "This job is running on an Ubuntu runner."
           echo "$RUNNER_OS"
+          touuch testfile.txt
 
   windows-echo:
-    runs-on: windows-latest
+    runs-on: sh-aw
     steps:
       - name: Show OS
         shell: bash
@@ -23,7 +24,7 @@ jobs:
           echo "${{ runner.os }}"
 
   mac-echo:
-    runs-on: macos-latest
+    runs-on: sh-aw
     steps:
       - name: Show OS
         shell: bash
